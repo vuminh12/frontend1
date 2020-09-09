@@ -3,8 +3,8 @@ package com.example.client.model;
 public class TaikhoanTietkiem {
     private String mataikhoantietkiem;
     private String tenloaitaikhoan;
-    private float laisuathangthang;
-    private float sodutoithieu;
+    private Float laisuathangthang;
+    private Float sodutoithieu;
 
     public String getMataikhoantietkiem() {
         return mataikhoantietkiem;
@@ -22,7 +22,7 @@ public class TaikhoanTietkiem {
         this.tenloaitaikhoan = tenloaitaikhoan;
     }
 
-    public float getLaisuathangthang() {
+    public Float getLaisuathangthang() {
         return laisuathangthang;
     }
 
@@ -30,7 +30,7 @@ public class TaikhoanTietkiem {
         this.laisuathangthang = laisuathangthang;
     }
 
-    public float getSodutoithieu() {
+    public Float getSodutoithieu() {
         return sodutoithieu;
     }
 

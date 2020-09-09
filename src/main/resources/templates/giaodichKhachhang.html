@@ -14,8 +14,6 @@
         <td align="right"><label >So Tien Giao Dich</label></td>
         <td align="right"><label >Ngay Giao Dich</label></td>
         <td align="right"><label >Ma Nhan Vien Thuc Hien</label></td>
-        <td>Edit</td>
-        <td>Delete</td>
     </tr>
     <tr th:each="giaodichKhachhang:${giaodichKhachhangs} " >
         <td align="left"><label th:text="${giaodichKhachhang.magiaodich}"></label></td>
@@ -23,6 +21,7 @@
         <td align="left"><label th:text="${giaodichKhachhang.mataikhoannhan}"></label></td>
         <td align="left"><label th:text="${giaodichKhachhang.loaigiaodich}"></label></td>
         <td align="left"><label th:text="${giaodichKhachhang.sotiengiaodich}"></label></td>
+        <td align="left"><label th:text="${giaodichKhachhang.ngaygiaodich}"></label></td>
         <td align="left"><label th:text="${giaodichKhachhang.manhanvienthuchien}"></label></td>
     </tr>
 </table>

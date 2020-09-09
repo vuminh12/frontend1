@@ -11,7 +11,7 @@ public class Taikhoan {
     private String tenloaitaikhoan;
     private String makhachhang;
     private String manhanvientaotaikhoan;
-    private float sodu;
+    private Float sodu;
 
     public String getMataikhoan() {
         return mataikhoan;
@@ -53,11 +53,11 @@ public class Taikhoan {
         this.manhanvientaotaikhoan = manhanvientaotaikhoan;
     }
 
-    public float getSodu() {
+    public Float getSodu() {
         return sodu;
     }
 
-    public void setSodu(float sodu) {
+    public void setSodu(Float sodu) {
         this.sodu = sodu;
     }
 }

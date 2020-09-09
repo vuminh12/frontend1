@@ -4,22 +4,16 @@ package com.example.client.model;
 public class TaikhoanTindung {
     private String mataikhoantindung;
     private String tenloaitaikhoan;
+    private Float sonohientai;
+    private Float hanmuctoida;
 
-    public void setSoduhientai(float soduhientai) {
-        this.soduhientai = soduhientai;
-    }
-
-    public float getSonohientai() {
+    public Float getSonohientai() {
         return sonohientai;
     }
 
     public void setSonohientai(float sonohientai) {
         this.sonohientai = sonohientai;
     }
-
-    private float soduhientai;
-    private float sonohientai;
-    private float hanmuctoida;
 
     public String getMataikhoantindung() {
         return mataikhoantindung;
@@ -36,16 +30,7 @@ public class TaikhoanTindung {
     public void setTenloaitaikhoan(String tenloaitaikhoan) {
         this.tenloaitaikhoan = tenloaitaikhoan;
     }
-
-    public Float getSoduhientai() {
-        return soduhientai;
-    }
-
-    public void setSoduhientai(Float soduhientai) {
-        this.soduhientai = soduhientai;
-    }
-
-    public float getHanmuctoida() {
+    public Float getHanmuctoida() {
         return hanmuctoida;
     }
 

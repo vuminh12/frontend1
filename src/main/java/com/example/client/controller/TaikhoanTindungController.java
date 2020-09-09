@@ -43,7 +43,6 @@ public class TaikhoanTindungController {
         taikhoanTindung.setMataikhoantindung(mataikhoantindung);
         taikhoanTindung.setTenloaitaikhoan(tenloaitaikhoan);
         taikhoanTindung.setHanmuctoida(hanmuctoida);
-        taikhoanTindung.setSoduhientai(soduhientai);
         taikhoanTindung.setSonohientai(sonohientai);
         rest.postForObject("http://localhost:8080/taikhoanTindung", taikhoanTindung, TaikhoanTindung.class);
         return "redirect:/taikhoanTindung";

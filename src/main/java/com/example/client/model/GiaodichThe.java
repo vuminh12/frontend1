@@ -11,7 +11,7 @@ public class GiaodichThe {
     private float sotiengiaodich;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ngaygiaodich;
-    private String manhanviengiaodich;
+    private String manhanvienthuchien;
     private String loaigiaodich;
 
     public String getMagiaodich() {
@@ -54,12 +54,12 @@ public class GiaodichThe {
         this.ngaygiaodich = ngaygiaodich;
     }
 
-    public String getManhanviengiaodich() {
-        return manhanviengiaodich;
+    public String getManhanvienthuchien() {
+        return manhanvienthuchien;
     }
 
-    public void setManhanviengiaodich(String manhanviengiaodich) {
-        this.manhanviengiaodich = manhanviengiaodich;
+    public void setManhanvienthuchien(String manhanviengiaodich) {
+        this.manhanvienthuchien = manhanvienthuchien;
     }
 
     public String getLoaigiaodich() {

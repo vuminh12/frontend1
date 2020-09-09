@@ -1,6 +1,7 @@
 package com.example.client.controller;
 
 import com.example.client.model.GiaodichKhachhang;
+import com.example.client.model.Nhanvien;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,9 +48,20 @@ public class GiaodichKhachhangController {
         giaodichKhachhang.setLoaigiaodich(loaigiaodich);
         giaodichKhachhang.setMataikhoannhan(mataikhoannhan);
         giaodichKhachhang.setSotiengiaodich(sotiengiaodich);
+        giaodichKhachhang.setNgaygiaodich(ngaygiaodich);
         giaodichKhachhang.setManhanvienthuchien(manhanvienthuchien);
         rest.postForObject("http://localhost:8080/giaodichKhachhang", giaodichKhachhang, GiaodichKhachhang.class);
         return "redirect:/giaodichKhachhang";
     }
+    @GetMapping("/search-giaodichKhachhang")
+    public String searchgiaodichKhachhang(@RequestParam("id")String id,Model model){
+        GiaodichKhachhang  giaodichKhachhang = rest.getForObject("http://localhost:8080/giaodichKhachhang/search-giaodichKhachhang/{id}", GiaodichKhachhang.class,id);
 
+        if(giaodichKhachhang!=null && giaodichKhachhang.getMagiaodich().equals(id)){
+            model.addAttribute("giaodichKhachhang",giaodichKhachhang);
+            return "addGiaodichKhachhang";
+        }
+        else
+            return "error404";
+    }
 }
