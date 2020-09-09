@@ -2,30 +2,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Information Saving Account </title>
+    <title>Information Custommer</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="/js/custom.js"></script>
+    <script src="./js/custom.js"></script>
 </head>
 <body>
-<h1>Information Saving Account</h1>
-<table cellspacing="5" border="1" th:object="${taikhoanTietkiems}">
-    <tr>
-        <td align="right"><label >Ma Tai Khoan Tiet kiem</label></td>
-        <td align="right"><label >Ten Loai Tai Khoan</label></td>
-        <td align="right"><label >Lai Suat Hang Thang</label></td>
-        <td align="right"><label >So du Toi Thieu</label></td>
-        <td>Edit</td>
-    </tr>
-    <tr th:each="taikhoanTietkiem:${taikhoanTietkiems} " >
-        <td align="left"><label th:text="${taikhoanTietkiem.mataikhoantietkiem}"></label></td>
-        <td align="left"><label th:text="${taikhoanTietkiem.tenloaitaikhoan}"></label></td>
-        <td align="left"><label th:text="${taikhoanTietkiem.laisuathangthang}"></label></td>
-        <td align="left"><label th:text="${taikhoanTietkiem.sodutoithieu}"></label></td>
-        <td><a href="#" th:href="@{/taikhoanTietkiem/edit-taikhoanTietkiem/{id}(id=${taikhoanTietkiem.mataikhoantietkiem})}">Edit</a></td>
-    </tr>
-</table>
-<h2>Tim kiem tai khoan tiet kiem</h2>
-<form  th:action="@{/taikhoanTietkiem/search-taikhoanTietkiem}" method="get">
-    <input type="text" name="id" >
-    <input type="submit" value="Search"/>
-</form>
+
+<div id="centerAlign">
+    <div id="header">
+        <h3>Chào mừng đến với ngân hàng KITS</h3>
+        <h5>Thời gian hiện tại là <span id="time"></span></h5>
+        <script>currentTime("time")</script>
+    </div>
+
+    <div id="body">
+        <h1>Information Saving Account</h1>
+        <form  th:action="@{/taikhoanTietkiem/search-taikhoanTietkiem}" method="get">
+            <input style="width: 350px"  type="text" name="id" placeholder="Tìm kiếm tài khoản tiết kiệm">
+            <button id="search" type="submit">Tìm kiếm</button>
+        </form>
+        <table cellspacing="5" border="1" th:object="${taikhoanTietkiems}">
+            <tr>
+
+
+                <th>Mã tài khoản </th>
+                <th>Lãi xuất</th>
+                <th>Số dư tối thiểu</th>
+            </tr>
+            <tr th:each="taikhoanTietkiem:${taikhoanTietkiems} " >
+                <td align="left"><label th:text="${taikhoanTietkiem.mataikhoantietkiem}"></label></td>
+                <td align="left"><label th:text="${taikhoanTietkiem.tenloaitaikhoan}"></label></td>
+                <td align="left"><label th:text="${taikhoanTietkiem.laisuathangthang}"></label></td>
+                <td align="left"><label th:text="${taikhoanTietkiem.sodutoithieu}"></label></td>
+                <td><a href="#" th:href="@{/taikhoanTietkiem/edit-taikhoanTietkiem/{id}(id=${taikhoanTietkiem.mataikhoantietkiem})}">Edit</a></td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="footer">
+        <h3>All rights reserved 2020 KITS Bank</h3>
+        <div id="footer-bar">
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Thông tin tài chính</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

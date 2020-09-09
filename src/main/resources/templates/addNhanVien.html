@@ -1,49 +1,75 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Nhan Vien</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <meta charset="UTF-8">
+    <title>Information Employee</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <link rel="stylesheet" href="./css/addForm.css">
+    <script src="/js/custom.js"></script>
+    <script src="./js/custom.js"></script>
 </head>
 <body>
-<form method="POST" th:action="@{/nhanvien}"
-      th:object="${nhanvien}">
-    <h3>Input the Employee information ...</h3>
-    <table cellspacing="5" border="0">
-        <tr>
-            <td align="right"><label>Ma Nhan Vien: </label></td>
-            <td align="right"><input type="text" name="manhanvien" th:field="*{manhanvien}" /></td>
-        </tr>
-        <tr>
-            <td align="right"><label>Chung Minh Thu: </label></td>
-            <td align="right"><input type="text" name="chungminhthu" th:field="*{chungminhthu}" /></td>
-        </tr>
-        <tr>
-            <td align="right"><label>Ten Nhan Vien: </label></td>
-            <td align="right"><input type="text" name="tennhanvien" th:field="*{tennhanvien}" /></td>
-        </tr>
-        <tr>
-            <td align="right"><label>Ngay Sinh: </label></td>
-            <td align="right"><input type="text" name="ngaysinh" th:field="*{ngaysinh}" /></td>
-        </tr>
-        <tr>
-            <td align="right"><label>Bac Nghe: </label></td>
-            <td align="right"><input type="text" name="bacnghe" th:field="*{bacnghe}" /></td>
-        </tr>
-        <tr>
-            <td align="right"><label>Tham Nien: </label></td>
-            <td align="right"><input type="text" name="thamnien" th:field="*{thamnien}" /></td>
-        </tr>
-        <tr>
-            <td align="right"><label>Ma Chuc Vu: </label></td>
-            <td align="right"><input type="text" name="machucvu" th:field="*{machucvu}" /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><br>
-                <input type="submit" value="Submit"></td>
-        </tr>
-    </table>
-</form>
+<div id="centerAlign">
+    <div id="header">
+        <h3>Chào mừng đến với ngân hàng KITS</h3>
+        <h5>Thời gian hiện tại là <span id="time"></span></h5>
+        <script>currentTime("time")</script>
+    </div>
+    <br>
+
+    <div id="body">
+        <form method="POST" th:action="@{/nhanvien}"
+              th:object="${nhanvien}">
+            <h3 style="color: red">Thêm mới nhân viên</h3>
+            <table cellspacing="5" border="0">
+                <tr>
+                    <td align="right"><label>Mã nhân viên: </label></td>
+                    <td align="right"><input type="text" name="manhanvien" th:field="*{manhanvien}" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Chứng minh thư: </label></td>
+                    <td align="right"><input type="text" name="chungminhthu" th:field="*{chungminhthu}" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Tên nhân viên: </label></td>
+                    <td align="right"><input type="text" name="tennhanvien" th:field="*{tennhanvien}" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Ngày sinh: </label></td>
+                    <td align="right"><input type="text" name="ngaysinh" th:field="*{ngaysinh}" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Bậc nghề: </label></td>
+                    <td align="right"><input type="text" name="bacnghe" th:field="*{bacnghe}" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Thâm niên: </label></td>
+                    <td align="right"><input type="text" name="thamnien" th:field="*{thamnien}" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Mã chức vụ: </label></td>
+                    <td align="right"><input type="text" name="machucvu" th:field="*{machucvu}" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="submitButton">Submit</button></td>
+                </tr>
+            </table>
+
+        </form>
+        <br>
+    </div>
+    <div id="footer">
+        <h3>All rights reserved 2020 KITS Bank</h3>
+        <div id="footer-bar">
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Thông tin tài chính</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

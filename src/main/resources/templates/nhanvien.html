@@ -5,17 +5,17 @@
     <title>Information Employee</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
-
-
-
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="./css/custom.css">
+    <script src="/js/custom.js"></script>
+    <script src="./js/custom.js"></script>
 </head>
 <body>
 <div id="centerAlign">
     <div id="header">
         <h3>Chào mừng đến với ngân hàng KITS</h3>
-        <h5>Thời gian hiện tại là 10h</h5>
+        <h5>Thời gian hiện tại là <span id="time"></span></h5>
+        <script>currentTime("time")</script>
     </div>
     <br>
     <div id="body">
