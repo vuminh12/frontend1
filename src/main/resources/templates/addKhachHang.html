@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Khach hang</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form method="POST" th:action="@{/khachhang}"
+      th:object="${khachhang}">
+    <h3>Input the customer information ...</h3>
+    <table cellspacing="5" border="0">
+        <tr>
+            <td align="right"><label>Ma Khach hang: </label></td>
+            <td align="right"><input type="text" name="makhachhang" th:field="*{makhachhang}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Chung Minh Thu: </label></td>
+            <td align="right"><input type="text" name="chungminhthu" th:field="*{chungminhthu}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Ten Khach Hang: </label></td>
+            <td align="right"><input type="text" name="tenkhachhang" th:field="*{tenkhachhang}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Ngay Sinh: </label></td>
+            <td align="right"><input type="text" name="ngaysinh" th:field="*{ngaysinh}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Dia Chi: </label></td>
+            <td align="right"><input type="text" name="diachi" th:field="*{diachi}" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><br>
+                <input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

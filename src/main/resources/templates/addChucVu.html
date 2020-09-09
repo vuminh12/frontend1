@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chuc Vu</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form method="POST" th:action="@{/chucvu}"
+      th:object="${chucvu}">
+    <h3>Input the Employee information ...</h3>
+    <table cellspacing="5" border="0">
+        <tr>
+            <td align="right"><label>Ma Chuc Vu: </label></td>
+            <td align="right"><input type="text" name="machucvu" th:field="*{machucvu}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Ten Chuc Vu: </label></td>
+            <td align="right"><input type="text" name="tenchucvu" th:field="*{tenchucvu}" /></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><br>
+                <input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

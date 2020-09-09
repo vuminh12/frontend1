@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tai khoan Tin Dung</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form method="POST" th:action="@{/taikhoanTindung}"
+      th:object="${taikhoanTindung}">
+    <h3>Input the credit account information ...</h3>
+    <table cellspacing="5" border="0">
+        <tr>
+            <td align="right"><label>Ma Tai Khoan Tin KDung: </label></td>
+            <td align="right"><input type="text" name="mataikhoantindung" th:field="*{mataikhoantindung}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Ten Loai Tai Khoan: </label></td>
+            <td align="right"><input type="text" name="tenloaitaikhoan" th:field="*{tenloaitaikhoan}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Han muc toi da: </label></td>
+            <td align="right"><input type="text" name="hanmuctoida" th:field="*{hanmuctoida}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>So du hien tai: </label></td>
+            <td align="right"><input type="text" name="soduhientai" th:field="*{soduhientai}" /></td>
+        </tr>
+        <tr>
+            <td align="right"><label>So no hien tai: </label></td>
+            <td align="right"><input type="text" name="sonohientai" th:field="*{sonohientai}" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><br>
+                <input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

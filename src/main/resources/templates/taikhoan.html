@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information Account</title>
+</head>
+<body>
+<h1>Information Account</h1>
+<table cellspacing="5" border="1" th:object="${taikhoans}">
+    <tr>
+        <td align="right"><label >Ma Tai Khoan </label></td>
+        <td align="right"><label >Ngay Tao Tai Khoan</label></td>
+        <td align="right"><label >Ten Loai Tai Khoan</label></td>
+        <td align="right"><label >Ma Khach Hang</label></td>
+        <td align="right"><label >Ma Nhan Vien Tao Tai Khoan</label></td>
+        <td align="right"><label >So du</label></td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <tr th:each="taikhoan:${taikhoans} " >
+        <td align="left"><label th:text="${taikhoan.mataikhoan}"></label></td>
+        <td align="left"><label th:text="${taikhoan.ngaytaotaikhoan}"></label></td>
+        <td align="left"><label th:text="${taikhoan.tenloaitaikhoan}"></label></td>
+        <td align="left"><label th:text="${taikhoan.makhachhang}"></label></td>
+        <td align="left"><label th:text="${taikhoan.manhanvientaotaikhoan}"></label></td>
+        <td align="left"><label th:text="${taikhoan.sodu}"></label></td>
+        <td><a href="#" th:href="@{/taikhoan/edit-taikhoan/{id}(id=${taikhoan.mataikhoan})}">Edit</a></td>
+        <td><a href="#" th:href="@{/taikhoan/delete-taikhoan/{id}(id=${taikhoan.mataikhoan})}">Delete</a></td>
+    </tr>
+</table>
+<h3><a th:href="@{/taikhoan/add-taikhoan}">Create</a></h3>
+
+<h2>Tim kiem tai khoan</h2>
+<form  th:action="@{/taikhoan/search-taikhoan}" method="get">
+    <input type="text" name="id" >
+    <input type="submit" value="Search"/>
+</form>
+</body>
+</html>
