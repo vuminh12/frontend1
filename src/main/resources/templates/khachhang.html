@@ -40,7 +40,7 @@
             <td align="left"><label th:text="${khachhang.ngaysinh}"></label></td>
             <td align="left"><label th:text="${khachhang.diachi}"></label></td>
             <td><a href="#" th:href="@{/khachhang/edit-khachhang/{id}(id=${khachhang.makhachhang})}">Edit</a></td>
-            <td><a href="#" th:href="@{/khachhang/delete-khachhang/{id}(id=${khachhang.makhachhang})}">Delete</a></td>
+            <td><a href="#" th:href="@{/khachhang/delete-khachhang/{id}(id=${khachhang.makhachhang})}" onclick="return confirm('Bạn chắc chắn muốn xóa')">Delete</a></td>
         </tr>
     </table>
     <button class="taomoi"><a href="/khachhang/add-khachhang">Đăng kí khách hàng mới</a></button>

@@ -9,8 +9,24 @@
     <link rel="stylesheet" href="./css/custom.css">
 
     <link rel="stylesheet" href="./css/addForm.css">
+    <link rel="stylesheet" href="/css/addForm.css">
+
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+
+    <script src="/js/jquery-341.js"></script>
+    <script src="/js/jquery-validate.js"></script>
+
     <script src="/js/custom.js"></script>
     <script src="./js/custom.js"></script>
+
+    <style>
+        form .error {
+            display: flex;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <div id="centerAlign">
@@ -20,16 +36,16 @@
         <script>currentTime("time")</script>
     </div>
     <div id="body">
-        <form method="POST" th:action="@{/chucvu}"
+        <form id="formChucvu" method="POST" th:action="@{/chucvu}"
               th:object="${chucvu}">
-            <h3>Input the Employee information ...</h3>
+            <h3>Thông tin chức vụ</h3>
             <table cellspacing="5" border="0">
                 <tr>
-                    <td align="right"><label>Ma Chuc Vu: </label></td>
+                    <td align="right"><label>Mã chức vụ: </label></td>
                     <td align="right"><input type="text" name="machucvu" th:field="*{machucvu}" /></td>
                 </tr>
                 <tr>
-                    <td align="right"><label>Ten Chuc Vu: </label></td>
+                    <td align="right"><label>Tên chức vụ: </label></td>
                     <td align="right"><input type="text" name="tenchucvu" th:field="*{tenchucvu}" /></td>
                 </tr>
 
@@ -48,5 +64,27 @@
         </div>
     </div>
 </div>
+<script>
+
+
+    $(document).ready(function (){
+        $("#formChucvu").validate({
+            rules: {
+                machucvu: {
+                    required:true,
+
+
+                },
+                tenchucvu: {
+                    required: true
+                }
+            }, messages: {
+
+            }
+        })
+
+    })
+
+</script>
 </body>
 </html>

@@ -68,16 +68,22 @@ public class NhanvienController {
         model.addAttribute("nhanviens",nhanviens);
         return "redirect:/nhanvien";
     }
-    @GetMapping("/search-nhanvien")
-    public String searchNhanVien(@RequestParam("id")String id,Model model){
-        System.out.println(id);
-        Nhanvien nhanvien = rest.getForObject("http://localhost:8080/nhanvien/edit-nhanvien/{id}", Nhanvien.class,id);
-
-        if(nhanvien!=null && nhanvien.getManhanvien().equals(id)){
-            model.addAttribute("nhanvien",nhanvien);
-            return "addNhanVien";
-        }
-        else
-            return "error404";
+//    @GetMapping("/search-nhanvien")
+//    public String searchNhanVien(@RequestParam("id")String id,Model model){
+//        System.out.println(id);
+//        Nhanvien nhanvien = rest.getForObject("http://localhost:8080/nhanvien/edit-nhanvien/{id}", Nhanvien.class,id);
+//
+//        if(nhanvien!=null && nhanvien.getManhanvien().equals(id)){
+//            model.addAttribute("nhanvien",nhanvien);
+//            return "addNhanVien";
+//        }
+//        else
+//            return "error404";
+//    }
+    @PostMapping("/search-nhanvien")
+    public String showSearchResult(@RequestParam String searchName,Model model){
+        List<Nhanvien> nhanviens = Arrays.asList(rest.getForObject("http://localhost:8080/nhanvien/search-nhanvien/"+searchName,Nhanvien[].class));
+        model.addAttribute("nhanviens",nhanviens);
+        return "nhanvien";
     }
 }

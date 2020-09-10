@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Banking</title>
+    <meta charset="UTF-8">
+    <title>Information Custommer</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="/js/custom.js"></script>
+    <script src="./js/custom.js"></script>
+    <style>
+        #body a {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to...</h1>
-<img th:src="@{/images/TacoCloud.png}"/>
-<a th:href="@{/khachhang}" >Khach Hang</a><br/>
-<a th:href="@{/nhanvien}" >Nhan Vien</a><br/>
-<a th:href="@{/chucvu}" >Chuc Vu</a><br/>
-<a th:href="@{/taikhoan}">Tai Khoan</a><br/>
-<a th:href="@{/giaodichThe}" >Giao Dich The</a><br/>
-<a th:href="@{/giaodichKhachhang}" >Giao Dich Khach Hang</a><br/>
+<div id="centerAlign">
+    <div id="header">
+        <h3>Chào mừng đến với ngân hàng KITS</h3>
+        <h5>Thời gian hiện tại là <span id="time"></span></h5>
+        <script>currentTime("time")</script>
+    </div>
+
+
+    <div id="body">
+        <h3>Lựa chọn API demo</h3>
+        <a href="/khachhang">Khách hàng</a>
+        <a href="/nhanvien">Nhân viên</a>
+        <a href="/chucvu">Chức vụ</a>
+        <a href="/taikhoan">Tài khoản</a>
+        <a href="/giaodichthe">Giao dịch thẻ</a>
+        <a href="/giaodichKhachhang">Giao dịch khách hàng</a>
+
+<!--        <a th:href="@{/khachhang}" >Khach Hang</a><br/>-->
+<!--        <a th:href="@{/nhanvien}" >Nhan Vien</a><br/>-->
+<!--        <a th:href="@{/chucvu}" >Chuc Vu</a><br/>-->
+<!--        <a th:href="@{/taikhoan}">Tai Khoan</a><br/>-->
+<!--        <a th:href="@{/giaodichThe}" >Giao Dich The</a><br/>-->
+<!--        <a th:href="@{/giaodichKhachhang}" >Giao Dich Khach Hang</a><br/>-->
+    </div>
+    <div id="footer">
+        <h3>All rights reserved 2020 KITS Bank</h3>
+        <div id="footer-bar">
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Thông tin tài chính</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

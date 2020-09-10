@@ -19,8 +19,8 @@
     </div>
     <br>
     <div id="body">
-        <form  th:action="@{/nhanvien/search-nhanvien}" method="get">
-            <input style="width: 350px"  type="text" name="id" placeholder="Tìm kiếm nhân viên theo tên hoặc ID">
+        <form  th:action="@{/nhanvien/search-nhanvien}" method="post">
+            <input style="width: 350px"  type="text" name="searchName" placeholder="Tìm kiếm nhân viên theo tên hoặc ID">
             <button id="search" type="submit">Tìm kiếm</button>
         </form>
         <table cellspacing="5" border="1" th:object="${nhanviens}">
@@ -43,7 +43,7 @@
                 <td align="left"><label th:text="${nhanvien.thamnien}"></label></td>
                 <td align="left"><label th:text="${nhanvien.machucvu}"></label></td>
                 <td><a href="#" th:href="@{/nhanvien/edit-nhanvien/{id}(id=${nhanvien.manhanvien})}">Edit</a></td>
-                <td><a href="#" th:href="@{/nhanvien/delete-nhanvien/{id}(id=${nhanvien.manhanvien})}">Delete</a></td>
+                <td><a href="#" th:href="@{/nhanvien/delete-nhanvien/{id}(id=${nhanvien.manhanvien})}" onclick="return confirm('Bạn chắc chắn muốn xóa')">Delete</a></td>
             </tr>
         </table>
         <!--<h3><a th:href="@{/nhanvien/add-nhanvien}">Create</a></h3>-->

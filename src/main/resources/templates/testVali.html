@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+</head>
+<body>
+
+<!--<form action="">-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td>Name</td>-->
+<!--            <td> <input type="text" placeholder="input name" required id="name1"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Address</td>-->
+<!--            <td>   <input type="text" placeholder="address" required id="address1"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+
+
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<!--<form action="" onsubmit="validate()">-->
+<!--    <input type="text"id="phone-number" placeholder="phone number"/> <br>-->
+<!--    <input type="text" id="postal-code" placeholder="postal code" /><br>-->
+<!--    <input type="submit" />-->
+<!--</form>-->
+<script>
+    //  var textRegex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    // // var textRegex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    // var mytext ='112-456-0000';
+    // var result = textRegex.test(mytext);
+    // alert(result)
+</script>
+
+<form action=""  id="myform">
+    <table>
+        <tr>
+            <td>Ma nhan vien</td>
+            <td><input type="text" id="manhanvien"></td>
+        </tr>
+        <tr>
+            <td>Ngay sinh</td>
+            <td><input type="text" id="ngaysinh"></td>
+        </tr>
+    </table>
+<!--    <button type="submit" onclick="validateForm()">Gui</button>-->
+    <input type="submit" >
+</form>
+<script>
+   function validateForm(){
+       var regexMNV = /^[a-zA-Z0-9]{3,10}$/
+       var regexDOB =/^[0-9]{4}[-][01]{1}[0-9][-][012]{1}[0-9]$/
+       var regexDOB2 =/^[0-9]{4}[-][01]{1}[0-9][-][012]{1}[0-9][\s][0-9]{2}[:][0-9]{2}[:][0-9]{2}$/
+       var DOBvalue = document.getElementById("ngaysinh").value;
+
+       var matchResult = regexDOB2.test(DOBvalue);
+       console.log(matchResult)
+       alert(matchResult)
+       return matchResult;
+   }
+   document.getElementById("myform").addEventListener("submit",validateForm)
+
+
+</script>
+</body>
+</html>

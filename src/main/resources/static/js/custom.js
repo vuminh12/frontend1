@@ -6,6 +6,6 @@ function currentTime(id) {
     if (min<10) min='0'+min;
     if(sec<10) sec='0'+sec;
 
-    document.getElementById(id).innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
+    document.getElementById("time").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
     setTimeout(function(){ currentTime() }, 1000); /* setting timer */
 }
